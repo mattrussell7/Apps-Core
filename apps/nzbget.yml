@@ -43,6 +43,7 @@
       set_fact:
         pg_labels:
           traefik.enable: 'true'
+          traefik.frontend.redirect.entryPoint: 'https'
           traefik.port: '{{intport}}'
           traefik.frontend.rule: 'Host:{{pgrole}}.{{domain.stdout}},{{tldset}}'
           traefik.frontend.auth.forward.address: '{{gauth}}'

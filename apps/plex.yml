@@ -59,8 +59,11 @@
       set_fact:
         default_labels:
           traefik.enable: 'true'
-          traefik.port: '{{intport}}'
-          traefik.frontend.rule: 'Host:{{pgrole}}.{{domain.stdout}},{{tldset}}'
+          traefik.plex.frontend.redirect.entryPoint: 'https'
+          traefik.plex.port: '{{intport}}'
+          traefik.plex.frontend.rule: 'Host:{{pgrole}}.{{domain.stdout}},{{tldset}}'
+          traefik.plex-internal.port: '{{intport}}'
+          traefik.plex-internal.rule: 'Host:{{pgrole}}-internalaws.{{domain.stdout}},{{tldset}}'
 
     - name: 'Set Default Volume - {{extension.stdout}}'
       set_fact:
