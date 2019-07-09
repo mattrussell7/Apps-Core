@@ -63,7 +63,7 @@
           traefik.plex.port: '{{intport}}'
           traefik.plex.frontend.rule: 'Host:{{pgrole}}.{{domain.stdout}},{{tldset}}'
           traefik.plex-internal.port: '{{intport}}'
-          traefik.plex-internal.rule: 'Host:{{pgrole}}-internalaws.{{domain.stdout}},{{tldset}}'
+          traefik.plex-internal.frontend.rule: 'Host:{{pgrole}}-internalaws.{{domain.stdout}},{{tldset}}'
 
     - name: 'Set Default Volume - {{extension.stdout}}'
       set_fact:
